@@ -19,6 +19,25 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "HIDROID",
+          style: TextStyle(
+              color: Colors.white
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.white,
+            ),
+          )
+        ],
+        backgroundColor: Colors.blueAccent,
+        elevation: 0,
+      ),
+
       body: PageView(
         controller: _pageController,
         children: <Widget>[
@@ -32,17 +51,34 @@ class _HomeState extends State<Home> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.tachometerAlt),
-              title: Text("Dashboard"),
-              backgroundColor: Colors.blueAccent),
+              icon: FaIcon(
+                  FontAwesomeIcons.tachometerAlt,
+                  color: Colors.blueAccent,
+              ),
+              title: Text(
+                  "Dashboard",
+                style: TextStyle(
+                  color: Colors.blueAccent
+                ),
+              ),
+              backgroundColor: Colors.lightBlueAccent.withOpacity(0.1)),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.microchip),
-              title: Text("Device"),
-              backgroundColor: Colors.blueAccent),
+              icon: FaIcon(
+                  FontAwesomeIcons.microchip,
+                  color: Colors.blueAccent
+              ),
+              title: Text(
+                  "Device",
+                style: TextStyle(
+                  color: Colors.blueAccent
+                ),
+              ),
+              backgroundColor: Colors.lightBlueAccent.withOpacity(0.1)),
         ],
         onTap: (index) {
           setState(() {

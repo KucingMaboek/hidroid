@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hidroid/Awal.dart';
 
 import 'home.dart';
 
@@ -18,7 +19,7 @@ class Main extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home: Home(),
+      home: Awalan(),
       routes: routes,
     );
   }
