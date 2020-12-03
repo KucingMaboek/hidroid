@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hidroid/dashboard_tab.dart';
@@ -37,11 +37,11 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.tachometerAlt),
-              label: "Dashboard",
+              title: Text("Dashboard"),
               backgroundColor: Colors.blueAccent),
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.microchip),
-              label: "Device",
+              title: Text("Device"),
               backgroundColor: Colors.blueAccent),
         ],
         onTap: (index) {
