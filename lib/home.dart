@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hidroid/dashboard_tab.dart';
@@ -19,6 +19,26 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          "HIDROID",
+          style: TextStyle(
+              color: Colors.white
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.white,
+            ),
+          )
+        ],
+        backgroundColor: Colors.blueAccent,
+        elevation: 0,
+      ),
+
       body: PageView(
         controller: _pageController,
         children: <Widget>[
@@ -32,17 +52,34 @@ class _HomeState extends State<Home> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.tachometerAlt),
-              label: "Dashboard",
-              backgroundColor: Colors.blueAccent),
+              icon: FaIcon(
+                  FontAwesomeIcons.tachometerAlt,
+                  color: Colors.blueAccent,
+              ),
+              title: Text(
+                  "Dashboard",
+                style: TextStyle(
+                  color: Colors.blueAccent
+                ),
+              ),
+              backgroundColor: Colors.lightBlueAccent.withOpacity(0.1)),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.microchip),
-              label: "Device",
-              backgroundColor: Colors.blueAccent),
+              icon: FaIcon(
+                  FontAwesomeIcons.microchip,
+                  color: Colors.blueAccent
+              ),
+              title: Text(
+                  "Device",
+                style: TextStyle(
+                  color: Colors.blueAccent
+                ),
+              ),
+              backgroundColor: Colors.lightBlueAccent.withOpacity(0.1)),
         ],
         onTap: (index) {
           setState(() {
